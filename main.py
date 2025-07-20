@@ -649,3 +649,19 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Serveur Flask pour Render (port dynamique)
+from flask import Flask
+app = Flask(name)
+
+@app.route('/')
+def home():
+    return "Bot Telegram actif via Render ✅"
+
+def run_flask():
+    import os
+    port = int(os.environ.get("PORT", 8000))
+    app.run(host="0.0.0.0", port=port)
+
+def run_bot():
+    bot.infinity_polling()
